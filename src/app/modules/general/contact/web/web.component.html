@@ -1,0 +1,57 @@
+<h2>Web Courses Works!</h2><hr>
+  <div>
+  <table class = 'container'>
+    <tr>
+        <td colspan="3">
+        <input type="text" class="form-control" placeholder="Search Course Name" [(ngModel)]="filteredString"/>
+        </td>
+        <td colspan="2">
+            <select  class="form-control" [(ngModel)]='sortby'> 
+                <option [value]='1'>
+                    SortbyName
+                </option>
+                <option [value]='2'>
+                    SortbyPrice
+                </option>
+                
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <th class="bg-primary text-white">
+            Course Id
+        </th>
+        <th class="bg-primary text-white">
+            Course Name
+        </th>
+        <th class="bg-primary text-white">
+            Course Price
+        </th>
+        <th class="bg-primary text-white">
+            Course Descrption
+        </th>
+        <th class="bg-primary text-white">
+            Course Img
+        </th>
+    </tr>
+    <tr appProduct *ngFor="let Course of courses | filtersearch:filteredString | filtersort:sortby">
+
+        <td  class="bg-danger text-white">
+            {{Course.courseId}}
+     </td>
+     <td  class="bg-danger text-white">
+         {{Course.courseName | uppercase}}
+  </td>
+  <td  class="bg-danger text-white">
+     {{Course.coursePrice | currency:'INR'}}
+</td>
+<td   class="bg-danger text-white">
+ {{Course.courseDescrption | lowercase}}
+</td>
+<td  class="bg-danger text-white">
+ <img [src]="Course.courseImg" height="70px" width="90px">
+</td>
+ </tr>
+</table>
+</div>
+{{errMsg | json}}

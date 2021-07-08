@@ -1,0 +1,23 @@
+[
+    {
+        "courseId": 1,
+        "courseName": "Laptop",
+        "coursePrice": 50000,
+        "courseDesc": "A Laptop",
+        "courseImg": "assets/laptop1.jpg"
+    },
+    {
+        "courseId": 2,
+        "courseName": "iPhone",
+        "coursePrice": 100000,
+        "courseDesc": "A iPhone",
+        "courseImg": "assets/mobile.jfif"
+    },
+    {
+        "courseId": 3,
+        "courseName": "desk",
+        "coursePrice": 1500,
+        "courseDesc": "A desk",
+        "courseImg": "assets/table.jfif"
+    }
+]

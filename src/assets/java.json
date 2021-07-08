@@ -1,0 +1,6 @@
+[
+    {"courseId":101, "courseName":" java","coursePrice":1500,"courseDescrption":"core java training for 45 days","courseImg":"assets/java.png"},
+    {"courseId":102, "courseName":"java opps","coursePrice":500,"courseDescrption":"java opps framework training for 30 days","courseImg":"assets/java.png"},
+    {"courseId":103, "courseName":"java Script","coursePrice":600,"courseDescrption":"java Script boot training for 40 days","courseImg":"assets/js.png"},
+    {"courseId":104, "courseName":"JDBC","coursePrice":1000,"courseDescrption":"JDBC training for 35 days","courseImg":"assets/jdbc.png"}
+]

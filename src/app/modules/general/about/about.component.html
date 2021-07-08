@@ -1,0 +1,91 @@
+<!-- <h2>Product Component working.....</h2>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<div class="container">
+    <table class = "table">
+        <tr>
+            <td>
+                Search Product:<input type="text" class="form-control" placeholder="Search" />
+            </td>
+            <td>
+                <span>Sort :
+                    <select class="form-control">
+
+                        <option [value]="1">sortByName</option>
+
+                        <option [value]="2">SortById</option>
+
+                        <option [value]="3">SortByPrice</option>
+
+                    </select>
+                </span>
+            </td>
+        </tr><br>
+    </table>
+    <table class = "table">
+        <tr>
+            <th>productID</th>&nbsp;&nbsp;
+            <th>productName</th>&nbsp;&nbsp;
+            <th>productDesc</th>&nbsp;&nbsp;
+            <th>productPrice</th>&nbsp;&nbsp;
+            <th>productImage</th>
+        </tr>
+        <tr appProduct *ngFor='let product of products'>
+            
+            <td>{{product.productID}}</td>&nbsp;&nbsp;
+            <td> {{product.productName | uppercase}} </td>&nbsp;&nbsp;
+            <td> {{product.productPrice | currency:'INR'}} </td>&nbsp;&nbsp;
+            <td> {{product.productDesc | lowercase}} </td>&nbsp;&nbsp;
+            <td> <img [src]='product.productImg' width="95" height="110"></td>
+        </tr><br>
+    </table>
+</div> -->
+<h2>Product Component working.....</h2>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<div class="container">
+    <table class = "table">
+        <tr>
+            <td>
+                Search Product:<input type="text" class="form-control" placeholder="Search"
+                    [(ngModel)]="filteredString" />
+            </td>
+            <td>
+                <span>Sort :
+                    <select class="form-control" [(ngModel)]="Sort">
+
+                        <option [value]="1">sortByName</option>
+
+                        <option [value]="2">SortById</option>
+
+                        <option [value]="3">SortByPrice</option>
+
+                    </select>
+                </span>
+            </td>
+        </tr><br>
+    </table>
+    <table class = "table">
+        <tr>
+            <th>productID</th>&nbsp;&nbsp;
+            <th>productName</th>&nbsp;&nbsp;
+            <th>productDesc</th>&nbsp;&nbsp;
+            <th>productPrice</th>&nbsp;&nbsp;
+            <th>productImage</th>
+        </tr>
+        <tr appProduct *ngFor='let product of products | filtersearch : filteredString  | filtersort : Sort'>
+            <!-- <td>{{product.Id}}</td>
+           <td> {{product.Product_Name | uppercase}} </td>
+            <td> {{product.price}} </td> -->
+            <!-- <td> {{product.productDesc}} </td> -->
+            <!-- <td> <img [src]='product.productImg' width="150" height="100"></td> -->
+            <td>{{product.courseId}}</td>&nbsp;&nbsp;
+            <td> {{product.courseName | uppercase}} </td>&nbsp;&nbsp;
+            <td> {{product.coursePrice | currency:'INR'}} </td>&nbsp;&nbsp;
+            <td> {{product.courseDesc | lowercase}} </td>&nbsp;&nbsp;
+            <td> <img [src]='product.courseImg' width="95" height="110"></td>
+        </tr><br>
+    </table>
+</div>
